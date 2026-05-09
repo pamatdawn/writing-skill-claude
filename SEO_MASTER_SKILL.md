@@ -120,26 +120,35 @@ Before publishing, verify:
 
 After the article passes the Phase 4 checklist:
 
-> **Drive Note:** The Google Drive MCP places files at the Drive root level.
-> The "SEO copy writing" folder (ID: `1MwJgOscu-0-Pr4xA4cJGB8sfPoEo_Xu5`) is on a
-> Shared Drive; the MCP does not pass `supportsAllDrives=true`, so direct-folder
-> creation is blocked. Files land at Drive root — move them into the folder manually
-> if needed, or use a Google Apps Script integration for fully automated placement.
+**Infrastructure:** `seo_assets/drive_helper.gs` is a Google Apps Script Web App that creates
+files directly inside the "SEO copy writing" folder and appends rows to the tracker.
+Set the deployed URL in the constant below before using.
 
-### Step 5a — Create Google Doc
-1. Create a new Google Doc at Drive root named: `[YYYY-MM-DD] [Topic] — [Primary Keyword]`
-2. Write the full article content (heading hierarchy preserved as plain text headings).
-3. Return the Google Docs URL to the user.
+```
+DRIVE_WEBAPP_URL = <paste your Web App URL here after deploying drive_helper.gs>
+TARGET_FOLDER   = "SEO copy writing" (ID: 1MwJgOscu-0-Pr4xA4cJGB8sfPoEo_Xu5)
+```
 
-### Step 5b — Update Content Tracker
-**Tracker:** Content_Production_Tracker (ID: `1sqpK2mHqtfgqatbqzMybv355k4f8bP5hmwpbaqb1oR4`)
-URL: https://docs.google.com/spreadsheets/d/1sqpK2mHqtfgqatbqzMybv355k4f8bP5hmwpbaqb1oR4/edit
+### Step 5a — Create Google Doc via Web App
 
-**Append procedure** (Drive MCP has no update API — use read → recreate):
-1. Read current tracker with `read_file_content` (file ID above).
-2. Parse existing rows from the returned table.
-3. Create a new `Content_Production_Tracker` file (CSV → auto-converts to Sheet) with all
-   existing rows **plus** one new row:
+```bash
+curl -s -X POST "DRIVE_WEBAPP_URL" \
+  -H "Content-Type: application/json" \
+  -d "{\"action\":\"create_doc\",\"title\":\"YYYY-MM-DD Topic — keyword\",\"content\":\"ARTICLE_TEXT\"}"
+```
+
+Response: `{"success":true,"docId":"...","url":"https://docs.google.com/document/d/.../edit"}`
+
+### Step 5b — Append row to tracker via Web App
+
+```bash
+curl -s -X POST "DRIVE_WEBAPP_URL" \
+  -H "Content-Type: application/json" \
+  -d "{\"action\":\"append_tracker\",\"date\":\"YYYY-MM-DD\",\"topic\":\"...\",\"keyword\":\"...\",\"docUrl\":\"...\",\"status\":\"Draft\"}"
+```
+
+The script finds (or creates) `Content_Production_Tracker` inside the target folder and
+appends one row. No read → recreate hack needed — it uses `SpreadsheetApp.appendRow()` directly.
 
 | Column | Value |
 |--------|-------|
@@ -148,8 +157,6 @@ URL: https://docs.google.com/spreadsheets/d/1sqpK2mHqtfgqatbqzMybv355k4f8bP5hmwp
 | Primary Keyword | Target keyword |
 | Google Docs Link | URL from Step 5a |
 | Status | `Draft` |
-
-4. The newly created sheet becomes the active tracker — note its file ID for the next run.
 
 ---
 
@@ -175,7 +182,9 @@ Tracker Updated: ✓ Row appended to Content_Production_Tracker
 
 | Scenario | Action |
 |----------|--------|
-| Google Drive folder not found | Create "SEO copy writing" folder, then proceed |
-| Sheet not found | Create "Content_Production_Tracker" sheet in target folder |
+| DRIVE_WEBAPP_URL not set | Deploy `seo_assets/drive_helper.gs` and paste URL into skill |
+| Web App returns 401/403 | Redeploy script: Execute as Me, Access Anyone |
+| Google Drive folder not found | Update `FOLDER_ID` in `drive_helper.gs` and redeploy |
+| Sheet not found | Script auto-creates tracker on first `append_tracker` call |
 | User skips keyword input | AI infers from topic; confirm before writing |
 | Word count exceeds target | Trim FAQs and redundant sub-points first |
