@@ -125,7 +125,7 @@ files directly inside the "SEO copy writing" folder and appends rows to the trac
 Set the deployed URL in the constant below before using.
 
 ```
-DRIVE_WEBAPP_URL = <paste your Web App URL here after deploying drive_helper.gs>
+DRIVE_WEBAPP_URL = https://script.google.com/macros/s/AKfycbzOxpH1Pgmse-_u2JYqpPpudb55tBvOhJyoAdzhJvPNYg638oWVUBKaJo0TdhD_q9WSVA/exec
 TARGET_FOLDER   = "SEO copy writing" (ID: 1MwJgOscu-0-Pr4xA4cJGB8sfPoEo_Xu5)
 ```
 
