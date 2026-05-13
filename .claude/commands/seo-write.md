@@ -1,6 +1,6 @@
 Run the full SEO blog writing pipeline for the topic: $ARGUMENTS
 
-Follow every phase in SEO_MASTER_SKILL.md exactly:
+Follow every phase in `.claude/skills/seo-write/SEO_MASTER_SKILL.md` exactly:
 
 **Phase 0** — Confirm or infer: topic, primary keyword, secondary keywords, target audience, search intent, target word count (default 1,500–2,500).
 
@@ -8,7 +8,7 @@ Follow every phase in SEO_MASTER_SKILL.md exactly:
 
 **Phase 2** — Write the full article in US English following all on-page SEO rules: keyword in title/H1/first 100 words, density 0.8–1.5%, 2+ internal link placeholders ([INTERNAL LINK: topic]), 1–2 authoritative external links, FAQs with 3–5 questions.
 
-**Phase 3** — Apply E-E-A-T signals from seo_assets/templates/eeat_framework.md: first-hand experience example, cited statistics with year+source, author bio block, disclaimer if YMYL topic.
+**Phase 3** — Apply E-E-A-T signals from `.claude/skills/seo-write/templates/eeat_framework.md`: first-hand experience example, cited statistics with year+source, author bio block, disclaimer if YMYL topic.
 
 **Phase 4** — Self-check the final review checklist before publishing.
 

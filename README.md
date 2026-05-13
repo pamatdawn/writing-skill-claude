@@ -10,22 +10,24 @@ parallel on any article you provide.
 ```
 .claude/
 ├── agents/
-│   ├── seo_reviewers.md           — Combines seo-geo + seo-content into one review
-│   └── infographic_generator.md   — Runs data-visual-mapping → svg-renderer
-├── commands/seo-write.md          — /seo-write slash command (publish a Google Doc)
+│   ├── seo_reviewers.md             — Combines seo-geo + seo-content into one review
+│   └── infographic_generator.md     — Runs data-visual-mapping → svg-renderer
+├── commands/seo-write.md            — /seo-write slash command (publish a Google Doc)
 └── skills/
-    ├── seo-write/                 — End-to-end blog writing + Drive publish pipeline
-    ├── seo-geo/                   — Generative Engine Optimization (AI Overviews, ChatGPT, Perplexity)
-    ├── seo-content/               — E-E-A-T scoring + classical content quality
-    ├── data-visual-mapping/       — Article → normalized JSON infographic spec
-    └── svg-renderer/              — JSON → standalone, self-contained SVG
+    ├── seo-write/                   — End-to-end blog writing + Drive publish pipeline
+    │   ├── SKILL.md
+    │   ├── SEO_MASTER_SKILL.md      — Master playbook followed by /seo-write
+    │   ├── drive_helper.gs          — Apps Script Web App for Drive publishing
+    │   └── templates/eeat_framework.md
+    ├── seo-geo/                     — Generative Engine Optimization (AI Overviews, ChatGPT, Perplexity)
+    ├── seo-content/                 — E-E-A-T scoring + classical content quality
+    ├── data-visual-mapping/         — Article → normalized JSON infographic spec
+    └── svg-renderer/                — JSON → standalone, self-contained SVG
 examples/
 ├── v1-lantern-festival-cad-branding/  — First pass: 46/100 baseline
 └── v2-yi-peng-rebrand/                — After fixes: 72/100 (+26)
-seo_assets/
-├── drive_helper.gs                — Apps Script Web App for Drive publishing
-└── templates/eeat_framework.md
-SEO_MASTER_SKILL.md                 — Master playbook the seo-write skill follows
+docs/
+└── conversations/                   — Build-history transcripts
 ```
 
 ## Pipelines at a glance
@@ -109,16 +111,17 @@ infographic alongside the original venue-comparison `list` visual.
 
 ## Apps Script setup (optional — only for `/seo-write` publishing)
 
-`seo_assets/drive_helper.gs` is a Google Apps Script Web App that creates
-Google Docs in a configured folder and appends rows to a tracker
-spreadsheet.
+`.claude/skills/seo-write/drive_helper.gs` is a Google Apps Script Web App
+that creates Google Docs in a configured folder and appends rows to a
+tracker spreadsheet.
 
 1. Open [script.google.com](https://script.google.com), create a new
    project, and paste the contents of `drive_helper.gs`.
 2. Set `FOLDER_ID` to your target Drive folder ID.
 3. **Deploy → New deployment → Type: Web App → Execute as: Me →
    Access: Anyone**. Copy the resulting Web App URL.
-4. Paste the URL into `SEO_MASTER_SKILL.md` as `DRIVE_WEBAPP_URL`.
+4. Paste the URL into `.claude/skills/seo-write/SEO_MASTER_SKILL.md` as
+   `DRIVE_WEBAPP_URL`.
 
 Note: "Access: Anyone" creates an open endpoint that anyone with the URL
 can POST to. Treat the URL like a low-sensitivity credential; rotate

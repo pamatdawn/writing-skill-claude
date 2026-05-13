@@ -88,7 +88,7 @@ H1: [Title]
 
 ## Phase 3 — E-E-A-T Integration
 
-Load and apply `seo_assets/templates/eeat_framework.md` for every article.
+Load and apply `templates/eeat_framework.md` (co-located with this playbook) for every article.
 
 Quick checklist:
 - [ ] Author bio or "written by expert" signal included
@@ -120,7 +120,7 @@ Before publishing, verify:
 
 After the article passes the Phase 4 checklist:
 
-**Infrastructure:** `seo_assets/drive_helper.gs` is a Google Apps Script Web App that creates
+**Infrastructure:** `drive_helper.gs` (co-located with this playbook) is a Google Apps Script Web App that creates
 files directly inside the "SEO copy writing" folder and appends rows to the tracker.
 Set the deployed URL in the constant below before using.
 
@@ -182,7 +182,7 @@ Tracker Updated: ✓ Row appended to Content_Production_Tracker
 
 | Scenario | Action |
 |----------|--------|
-| DRIVE_WEBAPP_URL not set | Deploy `seo_assets/drive_helper.gs` and paste URL into skill |
+| DRIVE_WEBAPP_URL not set | Deploy `drive_helper.gs` and paste URL into skill |
 | Web App returns 401/403 | Redeploy script: Execute as Me, Access Anyone |
 | Google Drive folder not found | Update `FOLDER_ID` in `drive_helper.gs` and redeploy |
 | Sheet not found | Script auto-creates tracker on first `append_tracker` call |
