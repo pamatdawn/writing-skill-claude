@@ -1,0 +1,27 @@
+{
+  "title": "2026 Thailand Lantern Festival: Where to Watch",
+  "desc": "Compare the three main Yi Peng sky-lantern venues on Nov 24-25, 2026 in Chiang Mai.",
+  "template": "list",
+  "palette": ["#f59e0b", "#ea580c", "#7c3aed", "#0ea5e9"],
+  "language": "en",
+  "source": "docs.google.com/2026-lantern-festival-thailand",
+  "data": {
+    "items": [
+      {
+        "label": "CAD Heritage (Premium)",
+        "desc": "Paid, large-scale, simultaneous release. Buffet + bus included. Highly organized. International / Brazilian crowd. From $150 USD.",
+        "icon": "star"
+      },
+      {
+        "label": "Doi Saket (Mid-tier)",
+        "desc": "Paid, medium scale, simultaneous release. Buffet + bus included. Organized. Asian / Western crowd. From $115 USD.",
+        "icon": "ticket"
+      },
+      {
+        "label": "In-Town Public (Free)",
+        "desc": "Free admission, small scale, non-simultaneous release. Street food only, no bus. Locals & backpackers. DIY lanterns from $30 / ~100 THB each.",
+        "icon": "flag"
+      }
+    ]
+  }
+}

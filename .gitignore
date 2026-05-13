@@ -1,0 +1,23 @@
+# Local Claude Code settings (per-machine)
+.claude/settings.local.json
+
+# Unrelated projects living in this working directory
+/bhaya-cruise-clone/
+/vietnam-bucket-list/
+
+# Session transcripts and chat exports (root level only)
+/*.txt
+/*.ipynb
+/PLAN.md
+
+# Personal media
+/vienam bucketlist 2026.jpg
+
+# Temp publish artifacts from Apps Script POSTs
+/_publish_payload.json
+/_tracker_payload.json
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp

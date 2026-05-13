@@ -1,0 +1,38 @@
+{
+  "title": "Premium Yi Peng Night: Hour-by-Hour Schedule",
+  "desc": "A typical CAD Heritage premium evening on Yi Peng night in Chiang Mai, from hotel pickup at 1:00 PM to lantern release at 8:30 PM.",
+  "template": "sequence",
+  "palette": ["#f59e0b", "#ea580c", "#7c3aed", "#0ea5e9"],
+  "language": "en",
+  "source": "2026-yi-peng-festival-thailand-v2.md",
+  "data": {
+    "order": "asc",
+    "steps": [
+      {
+        "label": "1:00 PM — Hotel pickup",
+        "desc": "Shuttle buses collect guests from designated hotels. Arrive early; festival-night traffic in Chiang Mai is heavy.",
+        "icon": "bus"
+      },
+      {
+        "label": "4:00 PM — Entry & parallel activities",
+        "desc": "Ticket check, then a 90-minute window for Lanna dance, handicraft workshops, lantern-decorating, and photo zones.",
+        "icon": "clipboard"
+      },
+      {
+        "label": "6:00 PM — Khantoke dinner",
+        "desc": "Traditional northern Thai (Khantoke-style) buffet. VIP and Elite ticket holders dine in separate assigned seating.",
+        "icon": "dinner"
+      },
+      {
+        "label": "7:30 PM — Opening ceremony",
+        "desc": "Cultural performances, then 20 minutes of Buddhist chanting led by monks, followed by a 10-minute group meditation.",
+        "icon": "meditation"
+      },
+      {
+        "label": "8:30 PM — Lantern release",
+        "desc": "On a single signal, every guest releases a sky lantern simultaneously, followed by krathongs floating on the water.",
+        "icon": "rocket launch"
+      }
+    ]
+  }
+}

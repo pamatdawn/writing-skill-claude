@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Premium Yi Peng night hour-by-hour schedule">
+  <defs>
+    <style>
+      .ttl { font-family: 'Inter','Segoe UI',Helvetica,Arial,sans-serif; font-weight: 800; fill: #0f172a; }
+      .sub { font-family: 'Inter','Segoe UI',Helvetica,Arial,sans-serif; font-weight: 400; fill: #475569; }
+      .stepLabel { font-family: 'Inter','Segoe UI',Helvetica,Arial,sans-serif; font-weight: 700; fill: #0f172a; }
+      .stepDesc { font-family: 'Inter','Segoe UI',Helvetica,Arial,sans-serif; font-weight: 400; fill: #334155; }
+      .stepNum { font-family: 'Inter','Segoe UI',Helvetica,Arial,sans-serif; font-weight: 800; fill: #ffffff; }
+      .footer { font-family: 'Inter','Segoe UI',Helvetica,Arial,sans-serif; font-weight: 400; fill: #94a3b8; }
+      .tag { font-family: 'Inter','Segoe UI',Helvetica,Arial,sans-serif; font-weight: 600; fill: #ffffff; letter-spacing: 0.4px; }
+    </style>
+
+    <!-- Soft background tint -->
+    <linearGradient id="bgTint" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f59e0b" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#7c3aed" stop-opacity="0.04"/>
+    </linearGradient>
+
+    <!-- Icon: bus -->
+    <symbol id="icon-bus" viewBox="0 0 24 24">
+      <path d="M5 4h14a2 2 0 012 2v10a2 2 0 01-2 2h-1v1.5a1 1 0 11-2 0V18H8v1.5a1 1 0 11-2 0V18H5a2 2 0 01-2-2V6a2 2 0 012-2zm0 2v5h6V6H5zm14 0h-6v5h6V6zM6.5 14a1.2 1.2 0 100 2.4 1.2 1.2 0 000-2.4zm11 0a1.2 1.2 0 100 2.4 1.2 1.2 0 000-2.4z" fill="#ffffff"/>
+    </symbol>
+    <!-- Icon: clipboard -->
+    <symbol id="icon-clipboard" viewBox="0 0 24 24">
+      <path d="M9 2.5h6a1 1 0 011 1V4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2v-.5a1 1 0 011-1zm0 2v1h6v-1H9zm-3 3v13h12V7.5h-2V8a1 1 0 01-1 1H9a1 1 0 01-1-1v-.5H6zm2 5.5l1.4-1.4L11 13.2l3.6-3.6L16 11l-5 5-3-3z" fill="#ffffff"/>
+    </symbol>
+    <!-- Icon: dinner (plate with cutlery) -->
+    <symbol id="icon-dinner" viewBox="0 0 24 24">
+      <path d="M6 2.5a1 1 0 011 1V9a2 2 0 01-1.4 1.9V21a1 1 0 11-2 0V10.9A2 2 0 012 9V3.5a1 1 0 112 0V8h.5V3.5a1 1 0 112 0V8H7V3.5a1 1 0 01-1-1zM17 2.5c2 0 3.5 2.3 3.5 5.2 0 2.4-1 4.3-2.4 4.9V21a1 1 0 11-2 0v-8.4c-1.5-.6-2.5-2.5-2.5-4.9 0-2.9 1.5-5.2 3.4-5.2z" fill="#ffffff"/>
+    </symbol>
+    <!-- Icon: meditation (person sitting cross-legged) -->
+    <symbol id="icon-meditation" viewBox="0 0 24 24">
+      <path d="M12 2.5a2.2 2.2 0 110 4.4 2.2 2.2 0 010-4.4zM7.2 9.2a1.4 1.4 0 011.9-.6l1.7.9a3.5 3.5 0 002.4 0l1.7-.9a1.4 1.4 0 111.3 2.5l-1.8.9v3.2l3.4 1.6a1.3 1.3 0 11-1.1 2.4l-4.7-2.2a3 3 0 00-2.6 0L4.7 19.2A1.3 1.3 0 113.6 16.8L7 15.2V12l-1.8-.9a1.4 1.4 0 01-.6-1.9z" fill="#ffffff"/>
+    </symbol>
+    <!-- Icon: rocket launch -->
+    <symbol id="icon-rocket" viewBox="0 0 24 24">
+      <path d="M14.5 2.6c2.6.4 4.7 2.5 5 5.1.2 1.6-.2 3.4-1.2 5l-3 4.6-3.3 1.6-1.1-1.1 1.6-3.3-3.6-3.6L5.6 12.5l-1.1-1.1L6 8.2l4.6-3.1c1.6-1 3.4-1.4 3.9-1.4zm.5 4a1.9 1.9 0 100 3.8 1.9 1.9 0 000-3.8zM5.4 16.2a3.5 3.5 0 014.4 4.4 7 7 0 01-5.3 1 7 7 0 01.9-5.4z" fill="#ffffff"/>
+    </symbol>
+
+    <marker id="arrowDown" viewBox="0 0 10 10" refX="5" refY="9" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0 0 L10 0 L5 9 Z" fill="#ea580c"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="1200" height="800" fill="#ffffff"/>
+  <rect x="0" y="0" width="1200" height="800" fill="url(#bgTint)"/>
+
+  <!-- Title block -->
+  <g aria-label="title">
+    <text class="ttl" x="60" y="64" font-size="34">Premium Yi Peng Night: Hour-by-Hour Schedule</text>
+    <text class="sub" x="60" y="94" font-size="16">A typical CAD Heritage premium evening on Yi Peng night in Chiang Mai, from hotel pickup at 1:00 PM to lantern release at 8:30 PM.</text>
+    <rect x="60" y="106" width="64" height="4" rx="2" fill="#f59e0b"/>
+  </g>
+
+  <!-- Tag/legend -->
+  <g aria-label="tag">
+    <rect x="980" y="44" width="160" height="28" rx="14" fill="#7c3aed"/>
+    <text class="tag" x="1060" y="62" font-size="12" text-anchor="middle">CHIANG MAI · 2026</text>
+  </g>
+
+  <!-- Vertical timeline backbone -->
+  <line x1="160" y1="160" x2="160" y2="720" stroke="#ea580c" stroke-width="3" stroke-opacity="0.35" stroke-linecap="round"/>
+
+  <!-- Step 1 — 1:00 PM Hotel pickup -->
+  <g aria-label="step-1">
+    <circle cx="160" cy="170" r="32" fill="#f59e0b"/>
+    <text class="stepNum" x="160" y="178" font-size="20" text-anchor="middle">1</text>
+    <use href="#icon-bus" x="220" y="146" width="36" height="36"/>
+    <text class="stepLabel" x="270" y="166" font-size="20">1:00 PM — Hotel pickup</text>
+    <text class="stepDesc" x="270" y="192" font-size="14">Shuttle buses collect guests from designated hotels. Arrive early; festival-night</text>
+    <text class="stepDesc" x="270" y="210" font-size="14">traffic in Chiang Mai is heavy.</text>
+  </g>
+
+  <!-- Connector arrow 1 -->
+  <line x1="160" y1="210" x2="160" y2="262" stroke="#ea580c" stroke-width="2.5" stroke-opacity="0.55" marker-end="url(#arrowDown)"/>
+
+  <!-- Step 2 — 4:00 PM Entry & parallel activities -->
+  <g aria-label="step-2">
+    <circle cx="160" cy="288" r="32" fill="#ea580c"/>
+    <text class="stepNum" x="160" y="296" font-size="20" text-anchor="middle">2</text>
+    <use href="#icon-clipboard" x="220" y="264" width="36" height="36"/>
+    <text class="stepLabel" x="270" y="284" font-size="20">4:00 PM — Entry &amp; parallel activities</text>
+    <text class="stepDesc" x="270" y="310" font-size="14">Ticket check, then a 90-minute window for Lanna dance, handicraft workshops,</text>
+    <text class="stepDesc" x="270" y="328" font-size="14">lantern-decorating, and photo zones.</text>
+  </g>
+
+  <!-- Connector arrow 2 -->
+  <line x1="160" y1="328" x2="160" y2="380" stroke="#ea580c" stroke-width="2.5" stroke-opacity="0.55" marker-end="url(#arrowDown)"/>
+
+  <!-- Step 3 — 6:00 PM Khantoke dinner -->
+  <g aria-label="step-3">
+    <circle cx="160" cy="406" r="32" fill="#7c3aed"/>
+    <text class="stepNum" x="160" y="414" font-size="20" text-anchor="middle">3</text>
+    <use href="#icon-dinner" x="220" y="382" width="36" height="36"/>
+    <text class="stepLabel" x="270" y="402" font-size="20">6:00 PM — Khantoke dinner</text>
+    <text class="stepDesc" x="270" y="428" font-size="14">Traditional northern Thai (Khantoke-style) buffet. VIP and Elite ticket holders</text>
+    <text class="stepDesc" x="270" y="446" font-size="14">dine in separate assigned seating.</text>
+  </g>
+
+  <!-- Connector arrow 3 -->
+  <line x1="160" y1="446" x2="160" y2="498" stroke="#ea580c" stroke-width="2.5" stroke-opacity="0.55" marker-end="url(#arrowDown)"/>
+
+  <!-- Step 4 — 7:30 PM Opening ceremony -->
+  <g aria-label="step-4">
+    <circle cx="160" cy="524" r="32" fill="#0ea5e9"/>
+    <text class="stepNum" x="160" y="532" font-size="20" text-anchor="middle">4</text>
+    <use href="#icon-meditation" x="220" y="500" width="36" height="36"/>
+    <text class="stepLabel" x="270" y="520" font-size="20">7:30 PM — Opening ceremony</text>
+    <text class="stepDesc" x="270" y="546" font-size="14">Cultural performances, then 20 minutes of Buddhist chanting led by monks,</text>
+    <text class="stepDesc" x="270" y="564" font-size="14">followed by a 10-minute group meditation.</text>
+  </g>
+
+  <!-- Connector arrow 4 -->
+  <line x1="160" y1="564" x2="160" y2="616" stroke="#ea580c" stroke-width="2.5" stroke-opacity="0.55" marker-end="url(#arrowDown)"/>
+
+  <!-- Step 5 — 8:30 PM Lantern release -->
+  <g aria-label="step-5">
+    <circle cx="160" cy="642" r="32" fill="#f59e0b"/>
+    <text class="stepNum" x="160" y="650" font-size="20" text-anchor="middle">5</text>
+    <use href="#icon-rocket" x="220" y="618" width="36" height="36"/>
+    <text class="stepLabel" x="270" y="638" font-size="20">8:30 PM — Lantern release</text>
+    <text class="stepDesc" x="270" y="664" font-size="14">On a single signal, every guest releases a sky lantern simultaneously, followed</text>
+    <text class="stepDesc" x="270" y="682" font-size="14">by krathongs floating on the water.</text>
+  </g>
+
+  <!-- Closing note card -->
+  <g aria-label="closing-note">
+    <rect x="820" y="620" width="320" height="100" rx="12" fill="#7c3aed" fill-opacity="0.08" stroke="#7c3aed" stroke-width="1.5"/>
+    <text class="stepLabel" x="840" y="650" font-size="16">Wrap &amp; return</text>
+    <text class="stepDesc" x="840" y="674" font-size="13">Most premium events conclude by 10:00 PM,</text>
+    <text class="stepDesc" x="840" y="692" font-size="13">with shuttle buses returning guests to their</text>
+    <text class="stepDesc" x="840" y="710" font-size="13">hotels by 11:30 PM.</text>
+  </g>
+
+  <!-- Footer -->
+  <text class="footer" x="1140" y="780" font-size="11" text-anchor="end">Source: 2026-yi-peng-festival-thailand-v2.md</text>
+</svg>
